@@ -9,18 +9,36 @@
 	 *
 	 */
 class Arithmetic{
-
+	 /**
+	 * For storing number in array
+	 * @access private
+	 */	 	
 	private static $nums = [];
-
+	 /**
+	 * For setting number in array
+	 * @access private
+	 */	 	
 	private static $values;
 
+	 /**
+	 * Unset the values
+	 *
+	 * @return void
+	 */	 	
+	public function __destruct(){
+
+		unset(Arithmetic::$nums);
+		unset(Arithmetic::$nums);
+
+	}
 	 /**
 	 * Set value for calculation
 	 * @param  $value value seperated by comma
 	 *
+	 * @access private
 	 * @return void
 	 */	 	
-	public static function SetValues($values){
+	private static function SetValues($values){
 
 		Arithmetic::$values = $values;
 
@@ -30,9 +48,10 @@ class Arithmetic{
 	 /**
 	 * Explod the numbers into array
 	 *
+	 * @access private	 
 	 * @return void
 	 */	 	
-	public static function Numbers(){
+	private static function Numbers(){
 
 		Arithmetic::$nums = explode(',',Arithmetic::$values);
 
